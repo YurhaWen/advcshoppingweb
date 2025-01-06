@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout - ADVC</title>
+    <!-- Link to Font Awesome for icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- Link to Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <div class="header">
+      <div class="logo">
+        <a href="">ADVC</a>
+      </div>
+      <div class="nav">
+        <a href="#">Home</a>
+        <a href="#">About Us</a>
+        <a href="#">Produk</a>
+      </div>
+      <div class="icons">
+        <a href="#"><i class="fas fa-search"></i></a>
+        <a href="#"><i class="fas fa-user"></i></a>
+        <a href="#"><i class="fas fa-shopping-cart"></i></a>
+      </div>
+    </div>
+
+    <!-- Checkout Page -->
+    <div class="checkout-container">
+      <h1>Checkout (<span id="product-count">0</span>)</h1>
+      <!-- Detail Produk -->
+      <div id="cart-items"></div>
+
+      <!-- Input Nama dan Alamat -->
+      <form action="submit_order.php" method="POST">
+        <div class="customer-info">
+          <h2>Customer Information</h2>
+          <label for="name">Name:</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            required
+          />
+          <label for="address">Address:</label>
+          <textarea
+            id="address"
+            name="address"
+            placeholder="Your Address"
+            required
+          ></textarea>
+        </div>
+
+        <!-- Pilihan Pengiriman dan Pembayaran -->
+        <div class="shipping-payment">
+          <div class="shipping">
+            <h3>Select shipping</h3>
+            <p>Standard</p>
+            <p>Rp <span id="shipping-cost">25000</span></p>
+          </div>
+          <div class="payment">
+            <h3>Select payment</h3>
+            <p>COD (Cash on Delivery)</p>
+          </div>
+        </div>
+
+        <!-- Rangkuman Total -->
+        <div class="summary">
+          <div class="row">
+            <p>Subtotal (<span id="product-count-summary">0</span> produk)</p>
+            <p id="subtotal">Rp 0</p>
+          </div>
+          <div class="row">
+            <p>Total shipping costs</p>
+            <p>Rp <span id="shipping-cost-summary">25000</span></p>
+          </div>
+          <div class="row">
+            <p>Service fee</p>
+            <p>Rp <span id="service-fee">1000</span></p>
+          </div>
+          <div class="row total">
+            <h3>Total payment</h3>
+            <h3 id="total" name="total">0</h3>
+            <input type="hidden" id="total" name="total" value="0" />
+          </div>
+        </div>
+
+        <!-- Tombol Checkout -->
+        <div class="checkout-actions">
+          <button type="button" class="cancel-btn">Cancel</button>
+          <button type="submit" class="order-btn">Order</button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Link to script.js -->
+    <script src="script.js"></script>
+  </body>
+</html>

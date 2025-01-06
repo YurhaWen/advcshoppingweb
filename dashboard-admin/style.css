@@ -1,0 +1,482 @@
+/* Resetting some default styles */
+html,
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+  height: 100%; /* Ensure full viewport height */
+  overflow: hidden; /* Prevent scrolling */
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #faa0a0;
+  padding: 10px 20px;
+  color: white;
+}
+
+.header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin-left: 30px;
+}
+
+.header .search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 300px;
+  margin-left: 100px;
+}
+
+.header .search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  flex-grow: 1; /* Input mengisi ruang tersisa */
+}
+
+.header .search-bar i {
+  color: #ff6f61;
+}
+
+.header .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Menyusun elemen ke kanan */
+  gap: 20px; /* Menambahkan jarak antara elemen-elemen */
+}
+
+.header .user-info .country-info {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.header .user-info img.flag {
+  width: 25px;
+  height: 15px;
+  border-radius: 5px;
+}
+
+.header .user-info .country-name {
+  font-size: 14px;
+  color: #646464;
+}
+
+.header .user-info .admin-info {
+  display: flex;
+  align-items: center; /* Avatar dan teks akan sejajar horizontal */
+  gap: 10px;
+}
+
+.header .user-info .admin-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Teks disusun vertikal */
+}
+
+.header .user-info .admin-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #404040;
+}
+
+.header .user-info .admin-role {
+  font-size: 12px;
+  color: #565656;
+}
+
+.header .user-info img.avatar {
+  border-radius: 50%; /* Membuat avatar bulat */
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+}
+
+/* Sidebar Styling */
+.sidebar {
+  width: 250px;
+  background-color: #ee7676;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding-top: 10px;
+  color: white;
+  margin-top: 55px;
+}
+
+.sidebar h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  padding: 15px 30px; /* Menambahkan padding lebih besar untuk elemen sidebar */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.sidebar ul li:hover {
+  background-color: #ca9999;
+}
+
+.sidebar ul li i {
+  margin-right: 10px;
+}
+
+/* Active state */
+.sidebar ul li.active {
+  background-color: #ca9999; /* Tetap sesuai warna hover */
+  font-weight: bold;
+  color: #ffffff; /* Warna teks tetap kontras */
+}
+.sidebar a {
+  text-decoration: none;
+  color: white;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-btn {
+  font-size: 20px; /* Ukuran ikon */
+  cursor: pointer;
+  color: #333; /* Warna default ikon */
+  transition: color 0.3s, transform 0.3s; /* Animasi transisi */
+}
+
+.dropdown-btn:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.dropdown-content a {
+  margin-top: 10px;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content hr {
+  height: 5px;
+  width: 50%;
+  opacity: 0.2;
+}
+
+.dropdown-content a i {
+  margin-right: 20px;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Media Query untuk Responsiveness */
+@media (max-width: 768px) {
+  .header .search-bar {
+    width: 200px;
+    margin-left: 50px;
+  }
+
+  .header .user-info {
+    gap: 10px;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .sidebar ul li {
+    padding: 10px 15px;
+  }
+
+  .sidebar ul li i {
+    font-size: 18px;
+  }
+
+  .header .logo {
+    font-size: 20px;
+  }
+
+  .header .user-info img.avatar {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+.chart-container-wrapper {
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+
+.chart-container-wrapper h2 {
+  margin: auto;
+  margin-left: 280px;
+  margin-top: 30px;
+}
+
+.chart-container-wrapper .chart-container {
+  margin: auto;
+  margin-top: 30px;
+  margin-left: 270px;
+  max-width: 25%;
+}
+
+.metrics {
+  display: grid;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  grid-template-columns: repeat(2, 2fr);
+  gap: 1px;
+  margin-left: 700px;
+  margin-top: 20px;
+  padding: 0.5rem 1.6rem;
+  grid-gap: 2rem;
+  position: relative;
+  bottom: 2rem;
+  left: 1rem;
+}
+
+.metric {
+  width: 75%;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  margin-right: 100px;
+  position: relative;
+  margin-top: 10px;
+  gap: 1.6px;
+  margin-left: 30px;
+  margin-bottom: 0px;
+  bottom: 9rem;
+}
+
+.metric h3 {
+  margin: 0;
+  font-size: 16px;
+}
+
+.metric p {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+.positive {
+  color: green;
+}
+
+.negative {
+  color: red;
+}
+
+.best-products {
+  margin-top: 5px;
+  margin-left: 280px;
+  position: relative;
+  bottom: 9rem;
+}
+
+.product {
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  margin-right: 10px;
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.product h3 {
+  text-align: center;
+}
+
+.product p {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0.3px;
+}
+
+.product img {
+  width: 80%;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.product i {
+  align-items: right;
+  margin-bottom: 15px;
+}
+
+.product .editbtn {
+  border-radius: 5px;
+  padding: 5px 10px;
+  border: none;
+  margin-bottom: 10px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.editbtn:hover {
+  background-color: #d4d4d4;
+}
+
+/* Untuk perangkat dengan lebar layar maksimal 1024px (Tablet Landscape) */
+@media (max-width: 1024px) {
+  .header .search-bar {
+    width: 250px;
+    margin-left: 20px;
+  }
+
+  .header .user-info {
+    gap: 15px;
+  }
+
+  .sidebar {
+    width: 200px;
+  }
+
+  .chart-container-wrapper .chart-container {
+    margin-left: 200px;
+    max-width: 50%;
+  }
+
+  .metrics {
+    margin-left: 300px;
+  }
+
+  .metric {
+    width: 90%;
+    margin-left: 20px;
+  }
+
+  .best-products {
+    margin-left: 200px;
+  }
+
+  .product {
+    width: 45%;
+    margin: 10px auto;
+  }
+}
+
+/* Untuk perangkat dengan lebar layar maksimal 768px (Tablet Potrait dan Smartphone besar) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header .search-bar {
+    width: 200px;
+    margin: 10px auto;
+  }
+
+  .header .user-info {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .sidebar {
+    position: relative;
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+  }
+
+  .chart-container-wrapper .chart-container {
+    margin: 20px auto;
+    max-width: 80%;
+  }
+
+  .metrics {
+    grid-template-columns: 1fr;
+    margin: 20px auto;
+  }
+
+  .metric {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .best-products {
+    margin: 20px auto;
+  }
+
+  .product {
+    width: 90%;
+    margin: 10px auto;
+  }
+}
+
+/* Untuk perangkat dengan lebar layar maksimal 480px (Smartphone kecil) */
+@media (max-width: 480px) {
+  .header .logo {
+    font-size: 18px;
+  }
+
+  .header .search-bar {
+    width: 150px;
+  }
+
+  .header .user-info img.avatar {
+    width: 20px;
+    height: 20px;
+  }
+
+  .chart-container-wrapper .chart-container {
+    margin-left: 0;
+    max-width: 90%;
+  }
+
+  .metrics {
+    margin: 0 auto;
+  }
+
+  .metric {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .product {
+    width: 100%;
+  }
+
+  .best-products {
+    margin: 0;
+  }
+}

@@ -1,0 +1,178 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: linear-gradient(45deg, #fc939f, #ffb6c1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-image: url("pattern.svg"); /* Menggunakan pola baru */
+  background-size: cover; /* Mengisi seluruh layar */
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.background {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.login-container {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: left;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+  color: #333;
+  text-align: center;
+}
+
+p {
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  color: #666;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Style untuk input username dan password yang seragam */
+input[type="text"],
+input[type="password"] {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  width: 100%; /* Pastikan lebar input 100% */
+}
+
+/* Styling untuk checkbox */
+input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.forgot-password {
+  font-size: 0.8rem;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.btn {
+  background-color: #007bff;
+  color: white;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #0056b3;
+}
+
+.create-account {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+.create-account a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.create-account a:hover {
+  text-decoration: underline;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small screens (mobile devices) */
+@media (max-width: 768px) {
+  .login-container {
+    max-width: 100%;
+    padding: 1.5rem; /* Reduce padding on smaller devices */
+  }
+
+  h2 {
+    font-size: 1.2rem; /* Adjust font size for small screens */
+  }
+
+  p {
+    font-size: 0.75rem; /* Smaller text for better readability */
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 0.85rem; /* Slightly smaller text for inputs */
+  }
+
+  .btn {
+    font-size: 0.9rem; /* Adjust button text size */
+  }
+
+  .create-account {
+    font-size: 0.8rem; /* Adjust text for account creation link */
+  }
+}
+
+/* Extra small screens (very small devices like some phones) */
+@media (max-width: 480px) {
+  body {
+    background-size: 150%; /* Scale background to fit smaller screens */
+  }
+
+  .login-container {
+    padding: 1rem; /* Further reduce padding for very small screens */
+  }
+
+  h2 {
+    font-size: 1rem; /* Further reduce header font size */
+  }
+
+  p {
+    font-size: 0.7rem; /* Make paragraph text even smaller */
+  }
+
+  input[type="text"],
+  input[type="password"] {
+    font-size: 0.8rem; /* Smaller font for input fields */
+  }
+
+  .btn {
+    font-size: 0.9rem; /* Keep button size responsive */
+  }
+}

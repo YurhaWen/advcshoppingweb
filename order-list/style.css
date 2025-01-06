@@ -1,0 +1,381 @@
+/* Resetting some default styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+
+/* Header Styling */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #faa0a0;
+  padding: 10px 20px;
+  color: white;
+}
+
+.header .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin-left: 30px;
+}
+
+.header .search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border-radius: 20px;
+  padding: 5px 10px;
+  width: 300px;
+  margin-left: 100px;
+}
+
+.header .search-bar input {
+  border: none;
+  outline: none;
+  padding: 5px;
+  flex-grow: 1; /* Input mengisi ruang tersisa */
+}
+
+.header .search-bar i {
+  color: #ff6f61;
+}
+
+.header .user-info {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Menyusun elemen ke kanan */
+  gap: 20px; /* Menambahkan jarak antara elemen-elemen */
+}
+
+.header .user-info .country-info {
+  display: flex;
+  align-items: center;
+}
+
+.header .user-info img.flag {
+  width: 40px;
+  height: 25px;
+  border-radius: 5px; /* Sudut melengkung untuk bendera */
+  transform: translateX(-50px);
+}
+
+.header .user-info .country-name {
+  font-size: 14px;
+  color: #646464;
+  margin-left: 10px;
+  transform: translateX(-45px);
+}
+
+.header .user-info .admin-info {
+  display: flex;
+  align-items: center; /* Avatar dan teks akan sejajar horizontal */
+  gap: 10px; /* Memberikan jarak antara avatar dan tulisan */
+}
+
+.header .user-info .admin-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Teks disusun vertikal */
+}
+
+.header .user-info .admin-name {
+  font-weight: bold;
+  font-size: 14px;
+  color: #404040;
+  transform: translateX(-35px);
+}
+
+.header .user-info .admin-role {
+  font-size: 12px;
+  color: #565656;
+  transform: translateX(-37px);
+}
+
+.header .user-info img.avatar {
+  border-radius: 50%; /* Membuat avatar bulat */
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
+  transform: translateX(-35px);
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #ee7676;
+  height: 100vh;
+  position: fixed;
+  top: 8px;
+  left: 0;
+  padding-top: 10px;
+  color: white;
+  margin-top: 55px; /* Adjust for fixed navbar if needed */
+  z-index: 1000; /* Ensure the sidebar is on top */
+}
+
+/* Sidebar heading and list */
+.sidebar h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+}
+.sidebar ul a {
+  text-decoration: none;
+  color: white;
+}
+.sidebar ul li {
+  padding: 15px 20px;
+  cursor: pointer;
+}
+
+.sidebar ul li:hover {
+  background-color: #ca9999;
+}
+
+.sidebar ul li i {
+  margin-right: 10px;
+}
+.sidebar .active li {
+  background-color: #f98d8d;
+}
+
+/* Filter container styling */
+.filter-container {
+  position: relative;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  padding: 10px 20px;
+  margin-left: 270px; /* Ensure space for sidebar */
+}
+
+h1 {
+  position: relative;
+  text-align: center;
+  right: 32%;
+  font-size: 2.5rem; /* Ukuran font default yang lebih besar */
+}
+
+/* Responsif untuk h1 */
+@media (max-width: 768px) {
+  h1 {
+    right: 0; /* Mengembalikan posisi agar lebih terpusat */
+    font-size: 1.8rem; /* Ukuran font lebih kecil pada perangkat mobile */
+    padding: 0 10px; /* Menambahkan sedikit padding agar teks tidak menempel ke pinggir */
+  }
+}
+.dropdown-btn {
+  font-size: 20px; /* Ukuran ikon */
+  cursor: pointer;
+  color: #333; /* Warna default ikon */
+  transition: color 0.3s, transform 0.3s; /* Animasi transisi */
+}
+
+.dropdown-btn:hover {
+  color: #007bff;
+  transform: scale(1.1);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #fff;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  min-width: 160px;
+  z-index: 1;
+  border-radius: 10px;
+}
+
+.dropdown-content a {
+  margin-top: 10px;
+  color: black;
+  padding: 16px 32px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content hr {
+  height: 5px;
+  width: 50%;
+  opacity: 0.2;
+}
+.dropdown-content a i {
+  margin-right: 20px;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.filter-container select,
+.filter-container input {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.filter-container button {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: red;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filter-container button:hover {
+  background-color: darkred;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  /* Adjust layout for smaller screens */
+  .filter-container {
+    margin-left: 0;
+    flex-direction: column; /* Stack filters vertically */
+    align-items: flex-start; /* Align to the left */
+    gap: 10px;
+  }
+
+  .sidebar {
+    width: 200px; /* Reduce sidebar width for smaller screens */
+    margin-top: 50px; /* Adjust for smaller screens */
+  }
+
+  /* Adjust for smaller input fields and buttons */
+  .filter-container select,
+  .filter-container input,
+  .filter-container button {
+    width: 100%;
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  /* Make sidebar toggleable on small screens */
+  .sidebar {
+    display: none;
+  }
+
+  .sidebar.show {
+    display: block; /* Toggle when the sidebar has 'show' class */
+  }
+}
+
+@media (max-width: 480px) {
+  .filter-container {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .filter-container button {
+    font-size: 14px;
+    padding: 6px 14px;
+  }
+}
+/* Mengatur tampilan div main agar berada di tengah */
+.main {
+  margin-right: 150px; /* Leave space for th1e sidebar */
+  padding: 20px;
+  padding-top: 30px; /* Space for th1e heading */
+  flex-grow: 1;
+}
+
+/* Styling for h1 */
+h1 {
+  position: block;
+  right: 36rem;
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 20px 0;
+}
+
+/* Table container styling */
+.table-container {
+  width: 100%;
+  max-width: 1200px; /* Maximum width for the table */
+  overflow-x: auto; /* Enables horizontal scroll if necessary */
+  margin: 0 auto; /* Center the table container */
+}
+
+table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 10px;
+  overflow: hidden;
+  table-layout: fixed; /* Make sure columns are fixed */
+}
+
+th,
+td {
+  padding: 5px;
+  border: 1px solid #ddd;
+  text-align: left;
+}
+
+th {
+  background-color: #faa0a0;
+}
+
+td {
+  border-style: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  /* Adjust main content area */
+  .main {
+    margin-left: 0; /* Remove margin to sidebar for mobile */
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.8rem; /* Smaller heading size on mobile */
+  }
+
+  .table-container {
+    width: 100%; /* Table container takes full width */
+    padding: 0 10px;
+  }
+
+  table {
+    font-size: 14px; /* Smaller font size in table */
+  }
+
+  th,
+  td {
+    padding: 8px; /* Smaller padding for smaller screens */
+  }
+
+  td {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Smaller adjustments for very small screens */
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  th,
+  td {
+    padding: 6px;
+  }
+}
