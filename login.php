@@ -1,4 +1,31 @@
 <?php
+/*
+START proses_login
+IF request_method adalah POST THEN
+    GET username dari data POST
+    GET password dari data POST
+    
+    IF username kosong ATAU password kosong THEN
+        SET pesan_error = "Username dan password diperlukan!"
+        REDIRECT ke index page
+        KELUAR
+    END IF
+    
+    pengguna = verify_login(username, password)
+    
+    IF pengguna ada THEN
+        SET session user_id = ID pengguna
+        SET session username = username pengguna
+        SET session logged_in = benar
+        REDIRECT ke halaman utama
+    ELSE
+        SET pesan_error = "Username atau password tidak valid!"
+        REDIRECT ke index page
+    END IF
+END IF
+END login_process
+*/
+
 require_once 'koneksi.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -29,3 +56,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 ?>
+
